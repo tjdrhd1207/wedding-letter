@@ -1,14 +1,10 @@
-import type { NextConfig } from "next";
-import collectStyles from './server-styles';
-
+import type { NextConfig } from 'next'
+ 
 const nextConfig: NextConfig = {
   /* config options here */
-  webpack(config, { isServer }) {
-    if (isServer) {
-      collectStyles();
-    }
-    return config;
-  },
-};
-
-export default nextConfig;
+  compiler: {
+    styledComponents: true,
+  }
+}
+ 
+export default nextConfig
